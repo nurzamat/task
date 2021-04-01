@@ -26,7 +26,7 @@ public class ApplicationRepositoryCustomImpl implements ApplicationRepositoryCus
     public List<Application> getApplicationsByFilter(ApplicationFilter filter) {
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<Application> cq = cb.createQuery(Application.class);
-
+        //todo joins
         Root<Application> applicationRoot = cq.from(Application.class);
         List<Predicate> predicates = new ArrayList<>();
         if (filter.getPositionId() != null) {
