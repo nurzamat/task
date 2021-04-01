@@ -16,11 +16,13 @@ public class ApplicationAttributeValue {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "application_id")
-    private Long applicationId;
+    @ManyToOne
+    @JoinColumn(name = "application_id")
+    private Application application;
 
-    @Column(name = "attribute_id")
-    private Integer attributeId;
+    @ManyToOne
+    @JoinColumn(name = "attribute_id")
+    private Attribute attribute;
 
     @Column(name = "value")
     private String value;
